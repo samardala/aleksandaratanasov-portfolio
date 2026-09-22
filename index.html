@@ -8,32 +8,37 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="#top">ALEKSANDAR ATANASOV</a>
-  <nav>
-    <a href="#35mm">35MM</a>
-    <a href="#films">FILMS</a>
-    <a href="#about">ABOUT</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-  <span class="header-meta">BG / 2026</span>
+  <div class="header-inner">
+    <a class="brand" href="#top">ALEKSANDAR ATANASOV</a>
+    <nav aria-label="Main navigation">
+      <a href="#35mm">35MM</a>
+      <a href="#films">FILMS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <span class="header-meta">BG / 2026</span>
+  </div>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="hero-kicker mono">CINEMATOGRAPHY / PHOTOGRAPHY</div>
-    <div class="hero-title">
-      <h1>Frames<br><i>kept.</i></h1>
-      <p>A personal archive of moving and still images.</p>
+  <section class="hero" id="top">
+  <div class="hero-image">
+    <img src="./images/35mm-01.jpg" alt="35mm film frame, opening image">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-kicker mono">CINEMATOGRAPHY / FILM / PHOTOGRAPHY</p>
+    <h1>ALEKSANDAR<br>ATANASOV</h1>
+    <div class="hero-bottom">
+      <p>Private archive / cinematographer</p>
+      <span class="mono">35MM / MOVING IMAGE</span>
     </div>
-    <div class="hero-footer mono">
-      <span>PRIVATE ARCHIVE</span>
-      <a href="#35mm">SCROLL ↓</a>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section id="35mm" class="section archive">
     <div class="section-top">
@@ -47,38 +52,33 @@
     </div>
 
     <div class="photo-grid">
-      <figure class="photo photo-hero">
-        <img src="images/35mm-01.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 01</span><span>35MM</span></figcaption>
-      </figure>
+  <figure class="photo photo-feature">
+    <img src="./images/35mm-01.jpg" alt="35mm film photograph, frame 01" loading="eager">
+    <figcaption><span class="mono">ROLL 01 / FRAME 01</span><span>35MM</span></figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="./images/35mm-02.jpg" alt="35mm film photograph, frame 02" loading="lazy">
+    <figcaption><span class="mono">ROLL 01 / FRAME 02</span><span>35MM</span></figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="./images/35mm-03.jpg" alt="35mm film photograph, frame 03" loading="lazy">
+    <figcaption><span class="mono">ROLL 01 / FRAME 03</span><span>35MM</span></figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="./images/35mm-04.jpg" alt="35mm film photograph, frame 04" loading="lazy">
+    <figcaption><span class="mono">ROLL 01 / FRAME 04</span><span>35MM</span></figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="./images/35mm-05.jpg" alt="35mm film photograph, frame 05" loading="lazy">
+    <figcaption><span class="mono">ROLL 01 / FRAME 05</span><span>35MM</span></figcaption>
+  </figure>
+  <figure class="photo">
+    <img src="./images/35mm-06.jpg" alt="35mm film photograph, frame 06" loading="lazy">
+    <figcaption><span class="mono">ROLL 01 / FRAME 06</span><span>35MM</span></figcaption>
+  </figure>
+</div>
 
-      <figure class="photo photo-tall">
-        <img src="images/35mm-02.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 02</span><span>35MM</span></figcaption>
-      </figure>
-
-      <figure class="photo photo-wide">
-        <img src="images/35mm-03.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 03</span><span>35MM</span></figcaption>
-      </figure>
-
-      <figure class="photo photo-squareish">
-        <img src="images/35mm-04.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 04</span><span>35MM</span></figcaption>
-      </figure>
-
-      <figure class="photo photo-wide lower">
-        <img src="images/35mm-05.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 05</span><span>35MM</span></figcaption>
-      </figure>
-
-      <figure class="photo photo-last">
-        <img src="images/35mm-06.jpg" alt="35mm film photograph">
-        <figcaption><span class="mono">ROLL 01 / FRAME 06</span><span>35MM</span></figcaption>
-      </figure>
-    </div>
-
-    <div class="archive-end">
+<div class="archive-end">
       <span class="mono">ARCHIVE / OPEN</span>
       <span>More frames will be added here.</span>
     </div>
@@ -94,33 +94,52 @@
       <p>Selected films, music videos and moving-image projects.</p>
     </div>
 
-    <div class="video-grid">
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/6rMIP2GbGic" title="Film project 01" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 01</span></div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/Ehja-ipTgCs" title="Film project 02" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 02</span></div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/Jm04yPC4i9M" title="Film project 03" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 03</span></div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/AZzzhRJj1WU" title="Film project 04" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 04</span></div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/UT4AGOYKLa8" title="Film project 05" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 05</span></div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame"><iframe src="https://www.youtube.com/embed/61fMPeGC9vM" title="Film project 06" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="video-info"><span class="video-title">Selected work</span><span class="mono">FILM / 06</span></div>
-      </article>
+    <div class="video-gallery">
+  <article class="film-card film-card-feature">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/6rMIP2GbGic?rel=0&modestbranding=1" title="Film project 01" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">01</span>
     </div>
-  </section>
+    <div class="film-info"><h3>Selected work 01</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+  <article class="film-card">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/Ehja-ipTgCs?rel=0&modestbranding=1" title="Film project 02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">02</span>
+    </div>
+    <div class="film-info"><h3>Selected work 02</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+  <article class="film-card">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/Jm04yPC4i9M?rel=0&modestbranding=1" title="Film project 03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">03</span>
+    </div>
+    <div class="film-info"><h3>Selected work 03</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+  <article class="film-card">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/AZzzhRJj1WU?rel=0&modestbranding=1" title="Film project 04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">04</span>
+    </div>
+    <div class="film-info"><h3>Selected work 04</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+  <article class="film-card">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/UT4AGOYKLa8?rel=0&modestbranding=1" title="Film project 05" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">05</span>
+    </div>
+    <div class="film-info"><h3>Selected work 05</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+  <article class="film-card">
+    <div class="film-media">
+      <iframe src="https://www.youtube.com/embed/61fMPeGC9vM?rel=0&modestbranding=1" title="Film project 06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <span class="film-index mono">06</span>
+    </div>
+    <div class="film-info"><h3>Selected work 06</h3><span class="mono">CINEMATOGRAPHY</span></div>
+  </article>
+</div>
+
+</section>
 
   <section id="about" class="section about">
     <div class="section-top">
