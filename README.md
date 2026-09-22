@@ -1,13 +1,12 @@
-# Aleksandar Atanasov — private archive
+# Aleksandar Atanasov — v5
 
-Static portfolio for GitHub Pages / Cloudflare Pages.
+Static portfolio/archive for GitHub Pages or Cloudflare Pages.
 
-## Add a new 35mm image
-1. Put the file in `images/`.
-2. Duplicate one `<figure class="photo">` block in `index.html`.
-3. Change the image filename and caption.
+## 35mm archive
+Images live in `images/` and are referenced from `index.html`.
+To add a new frame, copy a `<figure class="photo">...</figure>` block and change the filename/caption.
 
-## Edit film projects
-Replace the YouTube embed URLs in `index.html`.
+## Films
+Replace YouTube embed URLs in `index.html` when adding or changing projects.
 
 No build step is required.
