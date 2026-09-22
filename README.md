@@ -1,15 +1,12 @@
-# Aleksandar Atanasov — v7
+# Aleksandar Atanasov — v8
 
-Visual rebuild focused on the three problems from v6:
+Contact hierarchy update:
 
-- The first 35mm frame is now the opening hero image, treated as a cinematic full-bleed title image.
-- The 35mm archive is deliberately smaller and calmer, with a constrained editorial grid rather than giant cards.
-- The films are now a real visual gallery: one large featured film followed by two-column video cards, with full-width 16:9 media and no old file-list styling.
+1. Instagram is now the primary/main contact and has a large circular profile image.
+2. Email is second and remains a direct `mailto:` link.
+3. IMDb is third and links to the supplied IMDb profile.
+4. Behance, YouTube and Facebook remain secondary contact links.
 
-Responsive behavior:
-- Desktop: 12-column photo layout and featured + 2-column film gallery.
-- Tablet: 2-column photo layout and 2-column films.
-- Mobile: restrained single-column photos and full-width 16:9 videos.
-- Mobile header keeps the navigation in a separate horizontal row.
+The Instagram avatar uses the public `unavatar.io/instagram/samardala` image endpoint so the profile image can stay synced with the Instagram account rather than being manually copied into the repository. If Instagram blocks that public avatar lookup, the card keeps a neutral fallback face treatment.
 
-All six 35mm images remain in `images/`.
+All previous v7 visual work remains intact.
