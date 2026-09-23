@@ -1175,37 +1175,31 @@ body.lightbox-open{overflow:hidden}
 
 
 /* =========================================================
-   v13 CONTACTS / darker neutral precision system
+   v13 — darker, cleaner contacts / neutral social marks
    ========================================================= */
 
 #contact {
-  background: #d0cbc2;
-  color: #181816;
-  padding-top: 108px;
-  padding-bottom: 112px;
+  background: #171715;
+  color: #eeeae2;
+  padding-top: 112px;
+  padding-bottom: 118px;
 }
 
 #contact .section-top {
   margin-bottom: 52px;
 }
 
-#contact .section-heading-copy {
-  display: inline-block;
-  padding: 18px 22px 20px;
-  background: #252421;
-  color: #f0ede5;
-  border: 1px solid #11110f;
-  box-shadow: 0 8px 22px rgba(15,15,13,.13);
+#contact .section-kicker {
+  color: #a7a299;
 }
 
-#contact .section-heading-copy .section-kicker {
-  color: #aaa59b;
-  margin-bottom: 9px;
+#contact .section-heading {
+  color: #f5f1e9;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
 }
 
-#contact .section-heading-copy h2 {
-  color: #f0ede5;
-  margin: 0;
+#contact .section-top::after {
+  background: rgba(238,234,226,.22);
 }
 
 #contact .contact-grid {
@@ -1213,182 +1207,168 @@ body.lightbox-open{overflow:hidden}
   grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 1px;
   padding: 1px;
-  background: #777269;
-  border: 1px solid #777269;
-  box-shadow: 0 12px 30px rgba(20,19,17,.12);
+  background: #3b3a35;
+  border: 1px solid #3b3a35;
 }
 
 #contact .contact-card {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
-  min-height: 104px;
+  position: relative;
+  min-height: 106px;
   margin: 0;
-  padding: 20px 22px;
+  padding: 20px 24px;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  background: #373632;
+  background: #232320;
   color: #eeeae2;
   display: grid;
-  grid-template-columns: 58px minmax(0,1fr);
+  grid-template-columns: 54px minmax(0,1fr);
   align-items: center;
-  column-gap: 16px;
-  text-align: center;
+  column-gap: 18px;
   text-decoration: none;
-  cursor: pointer;
+  text-align: center;
   transition: background .18s ease, transform .18s ease;
+  cursor: pointer;
 }
 
 #contact .contact-card:hover {
-  background: #44433e;
-  transform: translateY(-1px);
+  background: #2b2a26;
+  transform: none;
 }
 
-#contact .contact-card:focus-visible {
-  outline: 2px solid #b8b2a8;
-  outline-offset: -3px;
+#contact .contact-card-copy {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-#contact .contact-icon {
-  width: 58px;
-  height: 58px;
+#contact .contact-card-copy strong {
+  color: #f1eee7;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  font-weight: 650;
+}
+
+#contact .contact-logo {
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   justify-self: start;
-  background: #bdb8ae;
-  color: #252421;
-  border: 1px solid #d0cbc2;
-}
-
-#contact .contact-icon svg {
-  width: 29px;
-  height: 29px;
-  fill: currentColor;
-  display: block;
-}
-
-#contact .contact-card-name {
-  min-width: 0;
-  color: #f0ede5;
+  border: 1px solid #66635c;
+  color: #ded9cf;
+  background: #30302c;
   font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: .08em;
   font-weight: 700;
-  text-transform: uppercase;
-  justify-self: center;
-  overflow-wrap: anywhere;
+  line-height: 1;
+}
+
+#contact .contact-logo svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+#contact .contact-logo svg .fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+#contact .logo-facebook svg,
+#contact .logo-youtube svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+#contact .logo-youtube svg .cut {
+  fill: #30302c;
+}
+
+#contact .logo-imdb,
+#contact .logo-500px,
+#contact .logo-behance {
+  font-size: 10px;
+  letter-spacing: -.04em;
+}
+
+#contact .logo-imdb {
+  background: #4a473f;
+  color: #f0ece4;
+  border-color: #777268;
+}
+
+#contact .logo-500px {
+  background: #3b3a35;
+  color: #f1eee7;
+}
+
+#contact .logo-behance {
+  background: #35342f;
+  color: #f1eee7;
 }
 
 #contact .contact-instagram {
   grid-column: 1 / -1;
-  grid-template-columns: 78px minmax(0,1fr);
-  min-height: 128px;
-  padding: 22px 24px;
-  background: #24231f;
+  min-height: 126px;
+  grid-template-columns: 78px 54px minmax(0,1fr);
+  column-gap: 18px;
+  background: #1f1f1c;
+  border-bottom: 1px solid #3b3a35;
 }
 
 #contact .contact-instagram:hover {
-  background: #2e2d29;
+  background: #272622;
 }
 
-#contact .contact-instagram .contact-avatar {
-  width: 78px;
-  height: 78px;
+#contact .contact-avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0;
   border-radius: 50%;
   overflow: hidden;
+  border: 1px solid #77736b;
   background: #11110f;
-  border: 1px solid #8d887e;
+  display: block;
 }
 
-#contact .contact-instagram .contact-avatar img {
+#contact .contact-avatar img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
 
-#contact .contact-instagram .contact-card-name {
-  color: #f2efe8;
-  font-size: 15px;
-  letter-spacing: .1em;
+#contact .contact-instagram .contact-card-copy {
+  justify-content: center;
 }
 
 #contact .contact-email {
-  background: #3f3e39;
-}
-
-#contact .contact-email .contact-card-name {
-  text-transform: none;
-  letter-spacing: .025em;
-  font-size: 11px;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  width: 100%;
+  text-align: center;
 }
 
 #contact .contact-email.is-copied {
-  background: #55534d;
-}
-
-#contact .contact-imdb {
-  background: #34332f;
-}
-
-#contact .contact-imdb .contact-icon {
-  background: #c2bd50;
-  color: #252421;
-  border-color: #d2cc65;
-}
-
-#contact .contact-imdb .contact-icon svg text {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  fill: currentColor;
-}
-
-#contact .contact-behance {
-  background: #bdb8ae;
-}
-
-#contact .contact-behance svg {
-  width: 32px;
-  height: 28px;
-}
-
-#contact .contact-500px {
-  background: #34332f;
-}
-
-#contact .contact-500px .contact-icon {
-  background: #bdb8ae;
-}
-
-#contact .contact-500px .contact-icon svg text {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  fill: currentColor;
-}
-
-#contact .contact-youtube .contact-icon {
-  background: #c4c0b7;
+  background: #34332e;
 }
 
 #contact .contact-note {
+  color: #88847c;
+  border-top-color: #3b3a35;
   margin-top: 26px;
-  padding-top: 14px;
-  border-top: 1px solid #979188;
-  color: #55514a;
-  font-size: 8px;
 }
 
 @media (max-width: 800px) {
   #contact {
     padding-top: 82px;
-    padding-bottom: 84px;
-  }
-
-  #contact .section-heading-copy {
-    padding: 15px 17px 17px;
+    padding-bottom: 86px;
   }
 
   #contact .contact-grid {
@@ -1397,31 +1377,27 @@ body.lightbox-open{overflow:hidden}
 
   #contact .contact-instagram {
     grid-column: auto;
+    grid-template-columns: 64px 48px minmax(0,1fr);
     min-height: 108px;
   }
 
+  #contact .contact-avatar {
+    width: 62px;
+    height: 62px;
+  }
+
+  #contact .contact-logo {
+    width: 40px;
+    height: 40px;
+  }
+
   #contact .contact-card {
-    min-height: 88px;
+    min-height: 84px;
     padding: 16px;
-    grid-template-columns: 52px minmax(0,1fr);
-    column-gap: 13px;
+    grid-template-columns: 48px minmax(0,1fr);
   }
 
-  #contact .contact-icon {
-    width: 52px;
-    height: 52px;
-  }
-
-  #contact .contact-card-name {
-    font-size: 10px;
-  }
-
-  #contact .contact-instagram .contact-avatar {
-    width: 66px;
-    height: 66px;
-  }
-
-  #contact .contact-instagram {
-    grid-template-columns: 66px minmax(0,1fr);
+  #contact .contact-card-copy strong {
+    font-size: 12px;
   }
 }
