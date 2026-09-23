@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <header class="site-header">
@@ -137,12 +137,18 @@
     <div class="contact-grid">
       <a class="contact-card contact-instagram" href="https://www.instagram.com/samardala/" target="_blank" rel="noopener">
         <span class="contact-avatar">
-          <img src="https://unavatar.io/instagram/samardala" alt="Instagram profile picture for @samardala" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='./images/35mm-01.jpg';">
+          <img src="./images/instagram-profile.jpg" alt="Instagram profile picture for @samardala">
         </span>
         <span class="contact-card-copy">
           <strong>Instagram</strong>
           <span>@samardala</span>
         </span>
+        <span class="contact-arrow mono">↗</span>
+      </a>
+
+      <a class="contact-card contact-500px" href="https://500px.com/p/samardala" target="_blank" rel="noopener">
+        <span class="contact-mark">500</span>
+        <span class="contact-card-copy"><strong>500px</strong><span>samardala</span></span>
         <span class="contact-arrow mono">↗</span>
       </a>
 
@@ -190,8 +196,84 @@
   <span class="mono">PRIVATE ARCHIVE / 2026</span>
   <a class="mono" href="#top">↑ TOP</a>
 </footer>
-<div class="lightbox" id="photo-lightbox" aria-hidden="true"><button class="lightbox-close mono" type="button">CLOSE ×</button><img id="lightbox-image" src="" alt=""></div>
+<div class="lightbox" id="photo-lightbox" aria-hidden="true">
+  <button class="lightbox-close mono" type="button" aria-label="Close fullscreen">CLOSE ×</button>
+  <button class="lightbox-nav lightbox-prev mono" type="button" aria-label="Previous photograph">←</button>
+  <div class="lightbox-stage">
+    <img id="lightbox-image" src="" alt="">
+    <div class="lightbox-meta">
+      <span id="lightbox-caption" class="mono">ROLL 01 / FRAME 01</span>
+      <span id="lightbox-count" class="mono">01 / 06</span>
+    </div>
+  </div>
+  <button class="lightbox-nav lightbox-next mono" type="button" aria-label="Next photograph">→</button>
+  <p class="lightbox-hint mono">SCROLL / ← → / SWIPE</p>
+</div>
 <script>
-(function(){const b=document.getElementById('photo-lightbox'),i=document.getElementById('lightbox-image'),c=b.querySelector('.lightbox-close');document.querySelectorAll('.photo-lightbox-trigger').forEach(x=>x.addEventListener('click',()=>{i.src=x.dataset.fullscreenImage;i.alt=x.querySelector('img')?.alt||'';b.classList.add('is-open');b.setAttribute('aria-hidden','false');document.body.classList.add('lightbox-open')}));function close(){b.classList.remove('is-open');b.setAttribute('aria-hidden','true');document.body.classList.remove('lightbox-open');setTimeout(()=>i.src='',180)}c.addEventListener('click',close);b.addEventListener('click',e=>{if(e.target===b)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&b.classList.contains('is-open'))close()})})();
+(function(){
+  const box=document.getElementById('photo-lightbox');
+  const image=document.getElementById('lightbox-image');
+  const closeBtn=box.querySelector('.lightbox-close');
+  const prevBtn=box.querySelector('.lightbox-prev');
+  const nextBtn=box.querySelector('.lightbox-next');
+  const caption=document.getElementById('lightbox-caption');
+  const count=document.getElementById('lightbox-count');
+  const triggers=[...document.querySelectorAll('.photo-lightbox-trigger')];
+  let current=0, touchStartX=0, wheelLock=false;
+
+  function render(index){
+    current=(index+triggers.length)%triggers.length;
+    const trigger=triggers[current];
+    image.src=trigger.dataset.fullscreenImage;
+    image.alt=trigger.querySelector('img')?.alt||'';
+    const frame=trigger.closest('.photo')?.querySelector('figcaption span')?.textContent || ('FRAME '+String(current+1).padStart(2,'0'));
+    caption.textContent=frame;
+    count.textContent=String(current+1).padStart(2,'0')+' / '+String(triggers.length).padStart(2,'0');
+  }
+
+  function open(index){
+    render(index);
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden','false');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function close(){
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden','true');
+    document.body.classList.remove('lightbox-open');
+    setTimeout(()=>image.src='',180);
+  }
+
+  function next(){ render(current+1); }
+  function prev(){ render(current-1); }
+
+  triggers.forEach((trigger,index)=>trigger.addEventListener('click',()=>open(index)));
+  closeBtn.addEventListener('click',close);
+  prevBtn.addEventListener('click',prev);
+  nextBtn.addEventListener('click',next);
+
+  box.addEventListener('click',e=>{ if(e.target===box) close(); });
+
+  document.addEventListener('keydown',e=>{
+    if(!box.classList.contains('is-open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowRight' || e.key==='ArrowDown') { e.preventDefault(); next(); }
+    else if(e.key==='ArrowLeft' || e.key==='ArrowUp') { e.preventDefault(); prev(); }
+  });
+
+  box.addEventListener('wheel',e=>{
+    if(!box.classList.contains('is-open') || wheelLock) return;
+    wheelLock=true;
+    e.deltaY>0 ? next() : prev();
+    setTimeout(()=>wheelLock=false,320);
+  }, {passive:true});
+
+  box.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].clientX},{passive:true});
+  box.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-touchStartX;
+    if(Math.abs(dx)>45) dx<0 ? next() : prev();
+  },{passive:true});
+})();
 </script></body>
 </html>

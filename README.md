@@ -1,3 +1,11 @@
-# Aleksandar Atanasov — v10
+# Aleksandar Atanasov — portfolio v11
 
-Renamed 35MM to 35MM PHOTOGRAPHY and WORK to WORK PROJECTS. All six 35mm photographs open in a fullscreen lightbox. Improved small-text contrast, social/contact colors, and vertical rhythm. Video work 04 remains removed.
+Static HTML/CSS/JS portfolio for GitHub Pages.
+
+Changes in v11:
+- Fullscreen 35mm viewer now supports previous/next without closing.
+- Arrow keys, mouse wheel and mobile swipe navigate between photos.
+- 35mm grid redesigned as a photolab/contact-sheet style with scanner-like borders and columns.
+- Added 500px contact link.
+- Instagram contact uses the supplied sunflower-field portrait, cropped around the face.
+- Previous v10 work is preserved separately.
