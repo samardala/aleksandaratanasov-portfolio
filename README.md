@@ -1,13 +1,15 @@
 # Aleksandar Atanasov — portfolio v13
 
-Changes from v12:
-- Darker neutral contact section.
-- CONTACTS heading is isolated in a dark editorial label for stronger contrast.
-- Social/platform logos added to every contact card.
-- Icons use neutral graphite/stone tones rather than brand colors.
-- Contact names are centered.
-- Removed all small external-link arrow boxes.
-- Removed nicknames/usernames from every contact except the visible, selectable email address.
-- Instagram portrait remains and is still used as the profile image.
+Static HTML/CSS/JS portfolio for GitHub Pages.
+
+Changes in v13:
+- Contact section moved to a darker neutral palette.
+- CONTACTS heading gets a distinct dark editorial label block.
+- Social platform icons/logos are larger and more visible while staying neutral.
+- Removed all nicknames/handles from contact cards.
+- Instagram portrait remains on the left.
+- Email displays only `atanasovv.ski@gmail.com` and copies to clipboard when clicked.
+- Removed the arrow/open-link boxes.
+- Contact names are centered within their cards.
 - Contact order remains Instagram, Facebook, Email, IMDb, Behance, 500px, YouTube.
-- GitHub Pages-compatible static HTML/CSS/JS.
+- v12 remains preserved separately.
