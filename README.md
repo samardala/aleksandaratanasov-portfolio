@@ -3,9 +3,12 @@
 Static HTML/CSS/JS portfolio for GitHub Pages.
 
 Changes in v13:
-- Contact section changed to a darker neutral palette.
-- CONTACTS heading is now clearly separated from the background with stronger contrast and a divider.
-- Social marks/logos are more prominent while remaining monochrome/neutral.
-- Contact names remain clean and nickname/handle text is removed.
-- Email remains fully visible as atanasovv.ski@gmail.com for easy copying and memorization.
+- Contacts section changed to a much darker neutral palette.
+- CONTACT heading is visually separated from the background with a dark title plate and offset rule.
+- Social/contact logos are larger and more prominent while remaining neutral.
+- Removed contact nicknames/usernames.
+- Email remains fully written as atanasovv.ski@gmail.com.
+- Added visual logos for Instagram, Facebook, Mail, IMDb, Behance, 500px and YouTube.
+- All contact names are centered inside their cards.
+- Removed all small external-link arrow boxes.
 - v12 remains preserved separately.
