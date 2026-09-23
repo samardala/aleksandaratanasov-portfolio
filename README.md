@@ -1,10 +1,3 @@
 # Aleksandar Atanasov — v10
 
-- 35mm photographs are clickable and open in a custom fullscreen lightbox.
-- Added close button, Escape-to-close, click-outside-to-close, and mobile sizing.
-- Renamed the main archive section to `35MM PHOTOGRAPHY`.
-- Renamed the moving-image section to `WORK PROJECTS`.
-- Updated navigation labels accordingly.
-- Normalized social/contact colors for stronger contrast and a less accidental-looking palette.
-- Improved metadata and small-text contrast, spacing and wrapping across the site.
-- Kept the v9 removal of video work #4.
+Renamed 35MM to 35MM PHOTOGRAPHY and WORK to WORK PROJECTS. All six 35mm photographs open in a fullscreen lightbox. Improved small-text contrast, social/contact colors, and vertical rhythm. Video work 04 remains removed.
