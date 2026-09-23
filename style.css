@@ -1175,133 +1175,162 @@ body.lightbox-open{overflow:hidden}
 
 
 /* =========================================================
-   v13 contact palette
-   Logos become the visual anchors. Names stay clean.
+   v13 CONTACTS — darker / restrained / high-contrast
    ========================================================= */
 
+#contact {
+  background: #121210;
+  color: #f0eee8;
+  border-top: 1px solid #2e2d29;
+  border-bottom: 1px solid #2e2d29;
+}
+
+#contact .section-kicker {
+  color: #8d8981;
+}
+
+#contact .section-title,
+#contact h2 {
+  color: #f3f1eb;
+  text-shadow: 0 2px 18px rgba(0,0,0,.45);
+  letter-spacing: -.045em;
+}
+
+#contact .section-top {
+  position: relative;
+  padding-bottom: 26px;
+  margin-bottom: 48px;
+}
+
+#contact .section-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #34332e;
+}
+
+/* Dark precision grid */
 #contact .contact-grid {
-  background: #151513;
-  border-color: #151513;
+  background: #34332e;
+  border: 1px solid #34332e;
   gap: 1px;
 }
 
 #contact .contact-card {
-  min-height: 102px;
-  background: #f0ece4;
-  color: #171715;
-  padding: 20px 22px;
+  background: #1b1b18;
+  color: #f1efe9;
+  min-height: 96px;
+  padding: 19px 21px;
 }
 
 #contact .contact-card:hover {
-  background: #ffffff;
+  background: #24231f;
 }
 
-#contact .contact-card-copy {
-  gap: 5px;
+#contact .contact-instagram {
+  background: #171714;
+  min-height: 126px;
+  padding: 22px 24px;
+  border-left: 2px solid #8e8a81;
 }
 
-#contact .contact-card-copy strong {
-  font-size: 16px;
-  letter-spacing: -.025em;
-}
-
-#contact .contact-card-copy span {
-  color: #817c73;
-  font-size: 7px;
-  letter-spacing: .16em;
-  font-weight: 700;
-}
-
-#contact .contact-mark {
-  width: 48px;
-  height: 48px;
-  border: 0;
-  border-radius: 12px;
-  color: #fff;
-  background: #171715;
-  font-size: 13px;
-  font-weight: 800;
-  box-shadow: 0 8px 18px rgba(0,0,0,.13);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-
-#contact .contact-card:hover .contact-mark {
-  transform: translateY(-2px) scale(1.045);
-  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+#contact .contact-instagram:hover {
+  background: #1d1d19;
 }
 
 #contact .contact-avatar {
   width: 78px;
   height: 78px;
-  flex: 0 0 78px;
-  border: 3px solid #fff;
-  background: #111;
-  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+  flex-basis: 78px;
+  border: 1px solid #77736a;
+  box-shadow: 0 0 0 4px #11110f;
 }
 
-#contact .contact-instagram {
-  min-height: 126px;
-  background: #141312;
-  color: #fff;
+#contact .contact-card-copy strong {
+  color: #f4f2ec;
+  font-weight: 650;
 }
 
-#contact .contact-instagram:hover {
-  background: #0d0d0c;
+#contact .contact-card-copy span {
+  color: #8f8b83;
 }
 
 #contact .contact-instagram .contact-card-copy span {
-  color: #bcb6ad;
-}
-
-#contact .contact-instagram .contact-arrow {
-  border-color: rgba(255,255,255,.3);
-}
-
-#contact .contact-facebook .contact-mark {
-  background: #1877F2;
-  font-size: 28px;
-  font-family: Arial, sans-serif;
-  line-height: 1;
-  padding-top: 7px;
-}
-
-#contact .contact-email .contact-mark {
-  background: #E45B3F;
-  font-size: 19px;
-}
-
-#contact .contact-imdb .contact-mark {
-  background: #F5C518;
-  color: #151515;
-  font-size: 10px;
-  letter-spacing: -.04em;
-}
-
-#contact .contact-behance .contact-mark {
-  background: #1769FF;
-  font-size: 12px;
-}
-
-#contact .contact-500px .contact-mark {
-  background: #FF2E55;
-  font-size: 11px;
-  letter-spacing: -.06em;
-}
-
-#contact .contact-youtube .contact-mark {
-  background: #FF0033;
-  font-size: 17px;
-  padding-left: 2px;
+  color: #9c988f;
 }
 
 #contact .contact-arrow {
-  border-color: rgba(24,24,21,.16);
-  background: rgba(255,255,255,.35);
+  color: #d8d5ce;
+  border-color: #4b4943;
+  background: #151512;
+}
+
+#contact .contact-mark {
+  width: 46px;
+  height: 46px;
+  background: #2a2925;
+  border: 1px solid #55524a;
+  color: #eeece5;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+  font-size: 12px;
+}
+
+/* Make each neutral social mark visibly distinct without introducing brand colors. */
+#contact .contact-card:nth-child(2) .contact-mark { /* Facebook */
+  background: #383731;
+  border-color: #77736a;
+  font-size: 17px;
+}
+
+#contact .contact-card:nth-child(5) .contact-mark { /* Behance */
+  background: #33322d;
+  border-color: #858178;
+  font-size: 11px;
+}
+
+#contact .contact-500px .contact-mark {
+  background: #46443e;
+  border-color: #99948a;
+  color: #fff;
+  font-size: 11px;
+}
+
+#contact .contact-card:nth-child(7) .contact-mark { /* YouTube */
+  background: #3a3934;
+  border-color: #817d74;
+  font-size: 12px;
+}
+
+#contact .contact-email {
+  background: #20201c;
+}
+
+#contact .contact-imdb {
+  background: #1d1d1a;
+}
+
+#contact .contact-imdb .contact-mark {
+  background: #4b4941;
+  border-color: #9b968b;
+  color: #f1eee7;
+}
+
+#contact .contact-500px {
+  background: #20201d;
+}
+
+#contact .contact-note {
+  color: #77736b;
+  border-top-color: #34332e;
 }
 
 @media (max-width: 800px) {
-  #contact .contact-card {
-    min-height: 88px;
+  #contact .section-top {
+    padding-bottom: 20px;
+    margin-bottom: 34px;
   }
 
   #contact .contact-instagram {
@@ -1315,7 +1344,7 @@ body.lightbox-open{overflow:hidden}
   }
 
   #contact .contact-mark {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 }
