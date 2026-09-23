@@ -3,12 +3,12 @@
 Static HTML/CSS/JS portfolio for GitHub Pages.
 
 Changes in v13:
-- Redesigned the CONTACTS section with a much darker neutral palette.
-- Made the CONTACTS headline substantially more distinct from the background.
-- Added prominent neutral social-platform logo marks to every contact card.
-- Removed nicknames/handles from the visible contact labels.
-- Email is displayed only as `atanasovv.ski@gmail.com` and copies to the clipboard when clicked.
-- Instagram keeps the supplied portrait on the left.
-- Removed all small open-link arrow boxes.
-- Names are centered within the contact cards.
+- Redesigned CONTACTS with a darker neutral palette.
+- CONTACTS headline now has a high-contrast editorial treatment.
+- Added custom neutral SVG/social marks for Instagram, Facebook, Email, IMDb, Behance, 500px and YouTube.
+- Logos sit on the left while all contact names are centered within their cards.
+- Removed all external-link arrow boxes.
+- Instagram keeps the supplied profile photo to the left of the Instagram title.
+- Removed contact nicknames/handles.
+- Email card displays only atanasovv.ski@gmail.com and copies the address to clipboard when clicked.
 - v12 remains preserved separately.
