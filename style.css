@@ -957,3 +957,218 @@ body.lightbox-open{overflow:hidden}
     display: none;
   }
 }
+
+
+/* =========================================================
+   v12 typography spacing + precision contact panel
+   ========================================================= */
+
+/* Section descriptors are intentionally removed from the markup.
+   The kicker + large title now have a clean single hierarchy. */
+#35mm .section-top,
+#films .section-top {
+  margin-bottom: 52px;
+}
+
+#films {
+  padding-top: 78px;
+}
+
+#films .section-top {
+  margin-bottom: 50px;
+}
+
+/* Keep the heading itself visually isolated from the content below. */
+#films .section-heading-copy,
+#35mm .section-heading-copy {
+  gap: 0;
+}
+
+#films .section-kicker,
+#35mm .section-kicker {
+  margin-bottom: 16px;
+}
+
+#contact {
+  padding-top: 110px;
+  padding-bottom: 112px;
+}
+
+#contact .section-top {
+  margin-bottom: 58px;
+}
+
+/* A restrained, grid-based contact panel. */
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: rgba(24,24,21,.20);
+  border: 1px solid rgba(24,24,21,.20);
+}
+
+#contact .contact-card {
+  min-height: 94px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 20px;
+  background: #e7e2d9;
+  transition: background .18s ease, transform .18s ease;
+}
+
+#contact .contact-card:hover {
+  background: #ddd7cc;
+  transform: none;
+}
+
+#contact .contact-instagram {
+  grid-column: 1 / -1;
+  min-height: 122px;
+  background: #181816;
+  color: #fff;
+  padding: 22px 24px;
+}
+
+#contact .contact-instagram:hover {
+  background: #10100f;
+}
+
+#contact .contact-avatar {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: #111;
+}
+
+#contact .contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#contact .contact-card-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#contact .contact-card-copy strong {
+  font-size: 15px;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+#contact .contact-card-copy span {
+  font-size: 8px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #77736b;
+}
+
+#contact .contact-instagram .contact-card-copy span {
+  color: #aaa59b;
+}
+
+#contact .contact-arrow {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(24,24,21,.18);
+  font-size: 11px;
+}
+
+#contact .contact-instagram .contact-arrow {
+  border-color: rgba(255,255,255,.28);
+}
+
+#contact .contact-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border: 1px solid rgba(24,24,21,.22);
+  background: #eeeae2;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+#contact .contact-email {
+  background: #f3f0e8;
+}
+
+#contact .contact-imdb {
+  background: #e7e2d9;
+}
+
+#contact .contact-imdb .contact-mark {
+  background: #f5c518;
+}
+
+#contact .contact-500px {
+  background: #e1dcd3;
+}
+
+#contact .contact-note {
+  margin-top: 28px;
+  margin-bottom: 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(24,24,21,.16);
+  font-size: 8px;
+}
+
+@media (max-width: 800px) {
+  #films {
+    padding-top: 58px;
+  }
+
+  #35mm .section-top,
+  #films .section-top {
+    margin-bottom: 40px;
+  }
+
+  #films .section-kicker,
+  #35mm .section-kicker {
+    margin-bottom: 11px;
+  }
+
+  #contact {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
+  #contact .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #contact .contact-instagram {
+    grid-column: auto;
+    min-height: 100px;
+  }
+
+  #contact .contact-card {
+    min-height: 82px;
+    padding: 16px;
+  }
+
+  #contact .contact-avatar {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+
+  #contact .contact-card-copy strong {
+    font-size: 13px;
+  }
+}

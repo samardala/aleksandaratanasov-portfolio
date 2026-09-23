@@ -1,11 +1,11 @@
-# Aleksandar Atanasov — portfolio v11
+# Aleksandar Atanasov — portfolio v12
 
 Static HTML/CSS/JS portfolio for GitHub Pages.
 
-Changes in v11:
-- Fullscreen 35mm viewer now supports previous/next without closing.
-- Arrow keys, mouse wheel and mobile swipe navigate between photos.
-- 35mm grid redesigned as a photolab/contact-sheet style with scanner-like borders and columns.
-- Added 500px contact link.
-- Instagram contact uses the supplied sunflower-field portrait, cropped around the face.
-- Previous v10 work is preserved separately.
+Changes in v12:
+- Removed the two redundant section descriptor lines that were colliding with 35MM PHOTOGRAPHY and WORK PROJECTS.
+- Reduced the top spacing of WORK PROJECTS.
+- Redesigned CONTACTS as a cleaner precision grid with a featured Instagram row.
+- Contact order: Instagram, Facebook, Email, IMDb, Behance, 500px, YouTube.
+- Re-cropped the Instagram profile portrait slightly left to center the head better.
+- v11 remains preserved separately.
