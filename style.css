@@ -1396,3 +1396,61 @@ body.lightbox-open{overflow:hidden}
     bottom: 9px;
   }
 }
+
+/* v14 — moving-image portfolio previews */
+.video-gallery { gap: 72px 28px; }
+.film-card-feature { grid-column: 1 / -1; }
+.film-media.video-preview {
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  isolation: isolate;
+  background: #111;
+}
+.film-card-feature .film-media.video-preview { aspect-ratio: 2.05 / 1; }
+.film-poster {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block; z-index: 0;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+}
+.film-preview-shade {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg,rgba(0,0,0,.12),transparent 35%,rgba(0,0,0,.28));
+  pointer-events: none; transition: opacity .35s ease;
+}
+.film-media.video-preview iframe {
+  position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%;
+  border: 0; pointer-events: none; animation: preview-in .45s ease both;
+}
+@keyframes preview-in { from {opacity:0} to {opacity:1} }
+.film-media.video-preview .film-index { z-index: 4; }
+.preview-hint {
+  position: absolute; z-index: 4; left: 16px; bottom: 15px;
+  color: rgba(255,255,255,.82); font-size: 9px; letter-spacing: .12em;
+  transition: opacity .25s ease; pointer-events: none;
+}
+.preview-play {
+  position: absolute; z-index: 4; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 54px; height: 54px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.65); border-radius: 50%;
+  color: #fff; font-size: 13px; padding-left: 3px;
+  background: rgba(0,0,0,.12); backdrop-filter: blur(5px);
+  transition: opacity .25s ease, transform .3s ease; pointer-events: none;
+}
+.film-card.is-playing .preview-play,
+.film-card.is-playing .preview-hint { opacity: 0; }
+.film-card:hover .film-poster { transform: scale(1.025); }
+.film-card:hover .preview-play { transform: translate(-50%,-50%) scale(1.08); }
+.film-info { align-items: center; }
+.film-open { color: var(--darkmuted); text-decoration: none; font-size: 9px; letter-spacing: .08em; white-space: nowrap; }
+.film-open:hover { color: var(--text); }
+@media (max-width:800px) {
+  .video-gallery { gap: 48px; padding: 0; }
+  .film-card-feature .film-media.video-preview, .film-media.video-preview { aspect-ratio: 16 / 9; }
+  .preview-hint { left: 10px; bottom: 10px; font-size: 8px; }
+  .preview-play { width: 44px; height: 44px; }
+  .film-info { gap: 12px; }
+  .film-open { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-poster, .preview-play, .preview-hint { transition: none !important; }
+}
