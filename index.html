@@ -95,15 +95,15 @@
         </div>
         <div class="film-info"><h3>Selected work 02</h3><a class="mono film-open" href="https://www.youtube.com/watch?v=Ehja-ipTgCs" target="_blank" rel="noopener">WATCH FILM ↗</a></div>
       </article>
-      <article class="film-card" data-video-id="Jm04yPC4i9M">
-        <div class="film-media video-preview" tabindex="0" role="button" aria-label="Play preview: Selected work 03">
-          <img class="film-poster" src="https://i.ytimg.com/vi/Jm04yPC4i9M/maxresdefault.jpg" alt="Preview frame for Selected work 03" loading="lazy">
+      <article class="film-card" data-video-src="https://pub-e44e465055f24268817c1ab3019c1cbe.r2.dev/%D0%98%D0%B7%D0%BC%D0%B0%D0%BC%D0%B8%20%D0%9C%D0%B5%20%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB.mp4">
+        <div class="film-media video-preview" tabindex="0" role="button" aria-label="Play preview: Измами ме">
+          <img class="film-poster" src="https://i.ytimg.com/vi/Jm04yPC4i9M/maxresdefault.jpg" alt="Preview frame for Измами ме" loading="lazy">
           <div class="film-preview-shade"></div>
           <span class="film-index mono">03</span>
           <span class="preview-hint mono">PREVIEW / HOVER OR SCROLL</span>
           <span class="preview-play" aria-hidden="true">▶</span>
         </div>
-        <div class="film-info"><h3>Selected work 03</h3><a class="mono film-open" href="https://www.youtube.com/watch?v=Jm04yPC4i9M" target="_blank" rel="noopener">WATCH FILM ↗</a></div>
+        <div class="film-info"><h3>Измами ме</h3><a class="mono film-open" href="https://pub-e44e465055f24268817c1ab3019c1cbe.r2.dev/%D0%98%D0%B7%D0%BC%D0%B0%D0%BC%D0%B8%20%D0%9C%D0%B5%20%D0%A4%D0%B8%D0%BD%D0%B0%D0%BB.mp4" target="_blank" rel="noopener">WATCH FILM ↗</a></div>
       </article>
       <article class="film-card" data-video-id="UT4AGOYKLa8">
         <div class="film-media video-preview" tabindex="0" role="button" aria-label="Play preview: Selected work 05">
@@ -212,28 +212,48 @@
 </div>
 <script>
 (function(){
-  const cards=[...document.querySelectorAll('.film-card[data-video-id]')];
+  const cards=[...document.querySelectorAll('.film-card[data-video-id], .film-card[data-video-src]')];
   const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const active=new Set();
   document.querySelectorAll('.film-poster').forEach(img=>{img.addEventListener('error',()=>{if(!img.dataset.fallback){img.dataset.fallback='1';img.src=img.src.replace('/maxresdefault.jpg','/hqdefault.jpg');}});});
   function play(card){
     if(reduceMotion || active.has(card)) return;
-    const id=card.dataset.videoId;
-    const frame=document.createElement('iframe');
-    frame.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+id+'&playsinline=1&rel=0&modestbranding=1';
-    frame.title='Muted video preview';
-    frame.allow='autoplay; encrypted-media; picture-in-picture';
-    frame.setAttribute('tabindex','-1');
-    frame.setAttribute('aria-hidden','true');
-    card.querySelector('.film-media').appendChild(frame);
-    card.classList.add('is-playing');
+    const media=card.querySelector('.film-media');
     active.add(card);
+    if(card.dataset.videoSrc){
+      const video=document.createElement('video');
+      video.src=card.dataset.videoSrc;
+      video.autoplay=true;
+      video.muted=true;
+      video.loop=true;
+      video.playsInline=true;
+      video.preload='none';
+      video.setAttribute('aria-hidden','true');
+      video.setAttribute('tabindex','-1');
+      video.addEventListener('canplay',()=>card.classList.add('is-playing'),{once:true});
+      media.appendChild(video);
+      const attempt=video.play();
+      if(attempt && typeof attempt.catch==='function') attempt.catch(()=>{ pause(card); });
+    } else {
+      const id=card.dataset.videoId;
+      const frame=document.createElement('iframe');
+      frame.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+id+'&playsinline=1&rel=0&modestbranding=1';
+      frame.title='Muted video preview';
+      frame.allow='autoplay; encrypted-media; picture-in-picture';
+      frame.setAttribute('tabindex','-1');
+      frame.setAttribute('aria-hidden','true');
+      media.appendChild(frame);
+      card.classList.add('is-playing');
+    }
+    card.classList.add('is-playing');
   }
   function pause(card){
     if(!active.has(card)) return;
     const frame=card.querySelector('iframe');
     if(frame) frame.remove();
+    const video=card.querySelector('video');
+    if(video){ video.pause(); video.removeAttribute('src'); video.load(); video.remove(); }
     card.classList.remove('is-playing');
     active.delete(card);
   }
